@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Pratyasha ❤️</title>
+
+<style>
+
+/* ===================== */
+/* 🌸 PAGE 1 + 2 STYLE */
+/* ===================== */
+
+body{
+  margin:0;
+  font-family:"Courier New", monospace;
+  background:linear-gradient(120deg,#ff7aa2,#ff3b6b,#ffd166,#ff7aa2);
+  background-size:300% 300%;
+  animation:gradientFlow 35s ease infinite;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+
+@keyframes gradientFlow{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.container{
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 0 40px rgba(0,0,0,0.3);
+  transition:1s ease;
+}
+
+/* ===================== */
+/* 🌸 BUTTONS */
+/* ===================== */
+
+button{
+  padding:14px 24px;
+  border:none;
+  margin:15px;
+  font-size:18px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+#yesBtn{background:#ff2e63;color:#fff;}
+#noBtn{background:#ffd166;color:#222;}
+
+.hidden{display:none !important;}
+
+.warning{
+  animation:danger .3s alternate 6;
+}
+
+@keyframes danger{
+  from{background:#ff0033;}
+  to{background:#440000;}
+}
+
+/* ===================== */
+/* ❤️ HEARTS */
+/* ===================== */
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  pointer-events:none;
+  z-index:999;
+}
+
+/* ===================== */
+/* 🎵 AUDIO UI */
+/* ===================== */
+
+#audioUI{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  font-size:12px;
+}
+
+#progressBar{
+  width:180px;
+  height:6px;
+  border-radius:10px;
+  background:rgba(255,255,255,.3);
+  overflow:hidden;
+}
+
+#progressFill{
+  height:100%;
+  width:100%;
+  background:linear-gradient(90deg,#fff,#ffe066);
+  transform-origin:left;
+  transform:scaleX(0);
+}
+
+/* ===================== */
+/* 💌 NEXT STEP */
+/* ===================== */
+
+#nextStepBox{opacity:0;transition:1s;}
+#nextStepBox.show{opacity:1;}
+
+#nextYes{background:#ff2e63;color:#fff;}
+#nextNo{background:#ffd166;color:#222;}
+
+.fullAlert{
+  position:fixed;
+  inset:0;
+  background:rgba(120,0,0,.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  z-index:9999;
+}
+
+/* ===================== */
+/* 🌌 PAGE 3 RETROWAVE */
+/* ===================== */
+
+body.retrowave{
+  background:#000;
+  animation:none;
+}
+
+/* grain */
+body.retrowave::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  opacity:.08;
+  pointer-events:none;
+  background-image:
+  repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,.05)0px,
+    rgba(255,255,255,.05)1px,
+    transparent 1px,
+    transparent 2px);
+}
+
+/* waves */
+.retroWave{
+  position:fixed;
+  bottom:-60px;
+  left:0;
+  width:100%;
+  height:40%;
+  pointer-events:none;
+}
+
+.wave1,.wave2{
+  position:absolute;
+  width:200%;
+  height:100%;
+  left:-50%;
+  filter:blur(30px);
+}
+
+.wave1{
+  background:radial-gradient(circle,rgba(255,40,120,.25),transparent 60%);
+  animation:waveMove 8s ease-in-out infinite;
+}
+
+.wave2{
+  background:radial-gradient(circle,rgba(255,180,60,.18),transparent 60%);
+  animation:waveMove 11s ease-in-out infinite reverse;
+}
+
+@keyframes waveMove{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+}
+
+/* ===================== */
+/* 🎵 CRIMSON IPOD */
+/* ===================== */
+
+.ipodStyle{
+  background:linear-gradient(180deg,#8a001f,#c20035,#8a001f);
+  border-radius:28px;
+  padding:26px 20px 40px;
+  width:280px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  color:#fff;
+  box-shadow:
+    inset 0 2px 10px rgba(255,255,255,.1),
+    inset 0 -8px 20px rgba(0,0,0,.6),
+    0 20px 60px rgba(0,0,0,.9);
+}
+
+/* screen */
+#ipodScreen{
+  width:240px;
+  height:180px;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+  margin-bottom:22px;
+  box-shadow:0 8px 20px rgba(0,0,0,.7);
+}
+
+#ipodScreen video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* play */
+.playBtn{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:none;
+  font-size:32px;
+  cursor:pointer;
+  background:linear-gradient(#ffd166,#f0b93a);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.6),
+    inset 0 -3px 6px rgba(0,0,0,.3),
+    0 8px 20px rgba(0,0,0,.7);
+}
+/* ❤️ SIMPLE PAGE 3 LAYOUT */
+/* 🌹 Bottom ambient glow only */
+#page3{
+  position:fixed;
+  inset:0;
+  display:none;
+z-index:0;
+  background:
+    radial-gradient(
+      ellipse at 50% 120%,   /* pushes glow BELOW center */
+      rgba(255,120,160,0.25) 0%,
+      rgba(255,210,120,0.18) 25%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 20% 140%,
+      rgba(255,80,140,0.18),
+      transparent 55%
+    ),
+    #7a0014;
+
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  gap:20px;
+}
+#page3::before{
+  content:"";
+  position:absolute;
+  left:-15%;
+  bottom:-15%;
+  width:130%;
+  height:42%;
+  pointer-events:none;
+  z-index:-2;   /* deeper layer */
+
+  background:
+    radial-gradient(80% 100% at 50% 100%,
+      rgba(255,70,120,.25),
+      transparent 75%),
+    radial-gradient(60% 80% at 20% 100%,
+      rgba(255,210,120,.18),
+      transparent 80%);
+
+  filter:blur(70px);
+  opacity:.7;
+
+  animation:ambientWave 22s ease-in-out infinite;
+}
+
+/* 🌸 Ambient bottom wave (NO JS) */
+/* 🌊 Apple-style flowing bottom wave */
+#page3::after{
+  content:"";
+  position:absolute;
+  left:-10%;
+  bottom:-12%;
+  width:120%;
+  height:38%;
+  pointer-events:none;
+  z-index:-1;   /* above back layer, below content */
+
+  background:
+    radial-gradient(70% 90% at 50% 100%,
+      rgba(255,70,120,.45),
+      transparent 70%),
+    radial-gradient(50% 70% at 30% 100%,
+      rgba(255,210,120,.28),
+      transparent 75%);
+
+  filter:blur(55px);
+  opacity:.9;
+
+  animation:ambientWave 16s ease-in-out infinite;
+}
+
+/* 🖤 Black rectangle */
+/* 🖥️ Retro CRT Pink/Yellow Frame */
+#videoBox{
+  width:520px;
+  max-width:90vw;
+  height:300px;
+
+  background:#000;
+  border-radius:28px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+
+  position:relative;
+
+  /* 🎥 Deep romantic CRT frame (crimson friendly) */
+  border:16px solid #7a0f2a;   /* dark wine red */
+
+  box-shadow:
+    0 10px 0 #3a0714,                 /* heavy plastic depth */
+    0 22px 45px rgba(0,0,0,.75),     /* cinematic shadow */
+    inset 0 2px 6px rgba(255,210,120,.25),  /* warm highlight */
+    inset 0 -8px 16px rgba(0,0,0,.6);
+}
+
+
+/* ✨ inner CRT glow overlay */
+#videoBox::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  pointer-events:none;
+
+  background:
+    radial-gradient(circle at 50% 10%,
+      rgba(255,255,255,.08),
+      transparent 60%);
+}
+
+
+/* 📺 subtle scanline texture */
+#videoBox::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:26px;
+  pointer-events:none;
+  opacity:.12;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.08) 0px,
+      rgba(255,255,255,.08) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+}
+
+
+/* hidden video initially */
+#loveVideo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+/* 🌸 Cute PLAY button */
+#playVideoBtn{
+  padding:14px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+
+  background:linear-gradient(135deg,#ff2e63,#ff0055);
+  color:white;
+
+  box-shadow:
+    0 0 12px rgba(255,40,100,.5),
+    0 6px 0 rgba(0,0,0,.2);
+
+  transition:.25s;
+}
+
+#playVideoBtn:hover{
+  transform:scale(1.08);
+}
+
+
+#videoBox{
+  width:520px;
+  max-width:90vw;
+  height:300px;
+  background:black;
+  border-radius:18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+#loveVideo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none; /* hidden until PLAY */
+}
+
+/* 💖 Romantic Cinematic PLAY Button */
+#playVideoBtn{
+  padding:16px 38px;
+  font-size:20px;
+  letter-spacing:2px;
+  border:none;
+  border-radius:999px; /* pill shape */
+
+  font-family:"Courier New", monospace;
+  color:#fff;
+
+  cursor:pointer;
+  position:relative;
+
+  /* deep crimson romantic gradient */
+  background:
+    linear-gradient(145deg,#b0002a,#ff2e63,#8a001f);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.45),
+    inset 0 2px 4px rgba(255,255,255,.2),
+    inset 0 -4px 10px rgba(0,0,0,.5);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    letter-spacing .35s ease;
+}
+
+/* 🌸 soft glowing aura */
+#playVideoBtn::before{
+  content:"";
+  position:absolute;
+  inset:-4px;
+  border-radius:999px;
+  z-index:-1;
+
+  background:
+    radial-gradient(circle,
+      rgba(255,120,160,.6),
+      rgba(255,210,120,.25),
+      transparent 70%);
+
+  filter:blur(12px);
+  opacity:.6;
+}
+
+/* ✨ Hover — elegant lift */
+#playVideoBtn:hover{
+  transform:translateY(-3px) scale(1.05);
+  letter-spacing:3px;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.6),
+    0 0 25px rgba(255,120,160,.35),
+    inset 0 2px 4px rgba(255,255,255,.3);
+}
+
+/* 💌 Active press */
+#playVideoBtn:active{
+  transform:translateY(1px) scale(.98);
+  box-shadow:
+    inset 0 4px 10px rgba(0,0,0,.6);
+}
+
+#playVideoBtn:hover{
+  transform:scale(1.1);
+}
+#choiceText{
+  font-family:"Brush Script MT", cursive;
+  font-size:42px;
+  letter-spacing:1px;
+  margin:0 0 6px 0;
+  color:#ffd166;
+
+  text-shadow:
+    0 0 6px rgba(255,210,120,.6),
+    0 0 14px rgba(255,80,140,.4),
+    0 0 24px rgba(0,0,0,.5);
+
+  /* 🎬 CINEMATIC TRANSITION */
+  transition:
+    opacity 2s ease-in-out,
+    filter 2s ease-in-out,
+    letter-spacing 2s ease-in-out;
+
+  opacity:1;
+  filter:blur(0px);
+}
+
+
+
+@keyframes romanticFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-6px);
+  }
+}
+.fadeSwap{
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+/* ✨ TYPE CURSOR */
+.cursor{
+  display:inline-block;
+  margin-left:4px;
+  animation:blink 1s steps(2,start) infinite;
+}
+
+@keyframes blink{
+  to{ visibility:hidden; }
+}
+@keyframes appleWaveFlow{
+  0%{
+    transform:translateX(-4%) translateY(0) scale(1.05);
+    border-radius:45% 55% 60% 40% / 60% 40% 60% 40%;
+  }
+
+  50%{
+    transform:translateX(4%) translateY(-18px) scale(1.1);
+    border-radius:60% 40% 50% 50% / 40% 60% 40% 60%;
+  }
+
+  100%{
+    transform:translateX(-4%) translateY(0) scale(1.05);
+    border-radius:45% 55% 60% 40% / 60% 40% 60% 40%;
+  }
+}
+#videoBox,
+#choiceText,
+#playVideoBtn{
+  position:relative;
+  z-index:2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="retroWave hidden" id="waves">
+  <div class="wave1"></div>
+  <div class="wave2"></div>
+</div>
+
+<div class="container" id="mainBox">
+
+<h2 id="question">Are you ready to move forward?</h2>
+
+<div id="buttons">
+<button id="yesBtn">Yes</button>
+<button id="noBtn">No</button>
+</div>
+
+<h2 id="message" class="hidden">
+  <span id="typedText"></span><span class="cursor">|</span>
+</h2>
+
+<!-- ❤️ SIMPLE PAGE 3 -->
+
+<div id="audioUI" class="hidden">
+<div id="progressBar"><div id="progressFill"></div></div>
+<span id="timeText">0:00 / 0:26</span>
+</div>
+
+<div id="nextStepBox" class="hidden">
+<h3>Ready for next step?</h3>
+<button id="nextYes">Yes</button>
+<button id="nextNo">No</button>
+</div>
+
+<div id="ipodMode" class="hidden">
+
+<div id="ipodScreen">
+<video src="clip.mp4" autoplay muted loop></video>
+</div>
+
+<button class="playBtn">▶</button>
+
+</div>
+<!-- ❤️ PAGE 3 SIMPLE VIDEO AREA -->
+
+
+<audio id="loveAudio" src="love.mp3"></audio>
+<audio id="choiceAudio" src="mychoice.mp3"></audio>
+<audio id="clickSound" src="click.mp3"></audio>
+<audio id="alertSound" src="alert.mp3"></audio>
+
+
+
+</div>   <!-- ✅ mainBox ENDS HERE -->
+
+
+<!-- ❤️ PAGE 3 SIMPLE VIDEO AREA -->
+<div id="page3">
+
+  <div id="videoBox">
+    <video id="loveVideo" loop muted>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <h3 id="choiceText">Want to know my choice?</h3>
+<button id="playVideoBtn">PLAY</button>
+
+
+</div>
+
+<script>
+
+const yesBtn=document.getElementById("yesBtn");
+const noBtn=document.getElementById("noBtn");
+const message=document.getElementById("message");
+const typedText = document.getElementById("typedText");
+
+const question=document.getElementById("question");
+const buttons=document.getElementById("buttons");
+const audio=document.getElementById("loveAudio");
+const audioUI=document.getElementById("audioUI");
+const nextStepBox=document.getElementById("nextStepBox");
+const nextYes=document.getElementById("nextYes");
+const nextNo=document.getElementById("nextNo");
+const ipodMode=document.getElementById("ipodMode");
+const waves=document.getElementById("waves");
+
+let heartTimer=null;
+
+noBtn.onclick=()=>{
+alertSound.currentTime = 0;
+alertSound.play();
+question.innerText="Easy Girl 😌";
+document.body.classList.add("warning");
+setTimeout(()=>{
+document.body.classList.remove("warning");
+question.innerText="Are you ready to move forward?";
+},2000);
+};
+
+yesBtn.onclick=()=>{
+clickSound.currentTime = 0;
+clickSound.play();
+question.style.display="none";
+buttons.style.display="none";
+message.classList.remove("hidden");
+audioUI.classList.remove("hidden");
+audio.play();
+startHeartRain();
+typeWriter();
+};
+
+function createHeart(){
+
+  const heartWrap = document.createElement("div");
+  heartWrap.className = "heart";
+
+  heartWrap.style.position = "fixed";
+  heartWrap.style.left = Math.random() * window.innerWidth + "px";
+  heartWrap.style.bottom = "-20px";
+  heartWrap.style.pointerEvents = "none";
+  heartWrap.style.zIndex = "9999";
+
+  const heart = document.createElement("div");
+  heart.textContent = "❤️";
+
+  const size = 18 + Math.random() * 70;
+  heart.style.fontSize = size + "px";
+
+  heartWrap.appendChild(heart);
+  document.body.appendChild(heartWrap);
+
+  const drift = (Math.random() * 120 - 60);
+
+  heartWrap.animate(
+    [
+      { transform: "translate3d(0,0,0)", opacity:1 },
+      { transform: `translate3d(${drift}px,-120vh,0)`, opacity:0 }
+    ],
+    {
+      duration: 6000 + Math.random()*2000,
+      easing: "linear"
+    }
+  );
+
+  heart.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: "scale(1.35)" },
+      { transform: "scale(1)" }
+    ],
+    {
+      duration: 700,
+      iterations: Infinity,
+      easing: "ease-in-out"
+    }
+  );
+
+  setTimeout(()=>heartWrap.remove(),8000);
+}
+
+
+function startHeartRain(){
+if(heartTimer)return;
+function loop(){
+createHeart();
+heartTimer=setTimeout(loop,400);
+}
+loop();
+}
+
+function typeWriter(){
+
+  const part1 = "I love you Pratyasha and I can't wait to spend my whole life with you.";
+  const part2 = " Marry me Baby ❤️";
+
+  typedText.textContent = "";
+
+  let i = 0;
+  const speed = 70;
+
+  function typePart1(){
+    if(i < part1.length){
+      typedText.textContent += part1.charAt(i);
+
+      i++;
+      setTimeout(typePart1, speed);
+    }else{
+      /* ❤️ romantic pause before proposal line */
+      setTimeout(()=>{
+        i = 0;
+        typePart2();
+      }, 1400);   // ← change this number for longer delay
+    }
+  }
+
+  function typePart2(){
+    if(i < part2.length){
+      typedText.textContent += part2.charAt(i);
+
+      i++;
+      setTimeout(typePart2, speed);
+    }
+  }
+
+  typePart1();
+}
+
+
+audio.addEventListener("ended",()=>{
+nextStepBox.classList.remove("hidden");
+setTimeout(()=>nextStepBox.classList.add("show"),50);
+});
+
+nextNo.onclick=()=>{
+alertSound.currentTime = 0;
+alertSound.play();
+
+const alertDiv=document.createElement("div");
+alertDiv.className="fullAlert";
+alertDiv.textContent="No Going Back Bitch!";
+document.body.appendChild(alertDiv);
+setTimeout(()=>alertDiv.remove(),2000);
+};
+
+
+/* ❤️ PAGE 3 ELEMENTS */
+const page3 = document.getElementById("page3");
+const playBtn = document.getElementById("playVideoBtn");
+const video = document.getElementById("loveVideo");
+const choiceAudio = document.getElementById("choiceAudio");
+const clickSound = document.getElementById("clickSound");
+const alertSound = document.getElementById("alertSound");
+
+
+
+
+/* 🌹 PAGE 2 YES → SHOW SIMPLE PAGE 3 */
+nextYes.onclick = () => {
+
+clickSound.currentTime = 0;
+clickSound.play();
+
+  console.log("PAGE 3 SIMPLE MODE");
+
+  /* stop hearts */
+  clearTimeout(heartTimer);
+  document.querySelectorAll(".heart").forEach(h=>h.remove());
+
+  /* hide old UI */
+  message.classList.add("hidden");
+  audioUI.classList.add("hidden");
+  nextStepBox.classList.add("hidden");
+
+  /* hide main card */
+  document.getElementById("mainBox").classList.add("hidden");
+
+
+  /* show page 3 */
+  page3.style.display = "flex";
+};
+
+
+/* ▶ PLAY BUTTON */
+playBtn.onclick = () => {
+
+clickSound.currentTime = 0;
+clickSound.play();
+	
+  const choiceText = document.getElementById("choiceText");
+
+  /* show video */
+  video.style.display = "block";
+  video.play();
+
+  /* 🎵 play choice audio */
+  choiceAudio.currentTime = 0;
+  choiceAudio.play();
+
+/* 🎨 cinematic fade OUT */
+choiceText.style.opacity = "0";
+choiceText.style.filter = "blur(6px)";
+choiceText.style.letterSpacing = "6px";
+
+setTimeout(() => {
+
+  choiceText.textContent = "My choice is you!";
+
+  /* 🎨 cinematic fade IN */
+  choiceText.style.opacity = "1";
+  choiceText.style.filter = "blur(0px)";
+  choiceText.style.letterSpacing = "1px";
+
+}, 2000);
+
+};
+/* 🎵 AUDIO PROGRESS BAR */
+const progressFill = document.getElementById("progressFill");
+const timeText = document.getElementById("timeText");
+
+function updateAudioProgress(){
+
+  if(audio && audio.duration){
+
+    const percent = audio.currentTime / audio.duration;
+    progressFill.style.transform = `scaleX(${percent})`;
+
+    function format(t){
+      const m = Math.floor(t/60);
+      const s = Math.floor(t%60).toString().padStart(2,"0");
+      return `${m}:${s}`;
+    }
+
+    timeText.textContent =
+      `${format(audio.currentTime)} / ${format(audio.duration)}`;
+  }
+
+  requestAnimationFrame(updateAudioProgress);
+}
+
+requestAnimationFrame(updateAudioProgress);
+
+</script>
+</body>
+</html>
